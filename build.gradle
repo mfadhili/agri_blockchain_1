@@ -21,6 +21,19 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
 }
 
+repositories {
+    maven {
+        url "https://hyperledger.jfrog.io/hyperledger/fabric-maven"
+    }
+    jcenter()
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
